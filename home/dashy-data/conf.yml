@@ -14,12 +14,21 @@ sections:
         description: Read later bookmarks
         url: http://10.212.244.230:9090/bookmarks
         icon: sh-linkding
+        id: 0_836_linkding
       - title: Glances
         description: Monitoring rpi
         icon: sh-glances
         url: http://10.212.244.230:61208
+        id: 1_836_glances
       - title: Flatnotes
         description: Markdown editor
         icon: sh-flatnotes
         url: http://10.212.244.230:8100
+        id: 2_836_flatnotes
+      - title: Termix
+        description: ssh into rpi
+        icon: sh-termix
+        url: http://10.212.244.230:8080/
+        target: newtab
+        id: temp_Termix
 pages: []

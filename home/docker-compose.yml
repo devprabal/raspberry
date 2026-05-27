@@ -24,8 +24,6 @@ services:
       - ./linkding-db:/etc/linkding/data
 
   dashy:
-    ## Taken from 
-    ## https://github.com/lissy93/dashy/blob/master/docker-compose.yml
     container_name: Dashy
     image: lissy93/dashy:latest
     restart: unless-stopped
@@ -33,90 +31,37 @@ services:
       - 4000:8080
     volumes:
       - ./dashy-data:/app/user-data
-    healthcheck:
-      test: [ 'CMD', 'node', '/app/services/healthcheck.js' ]
-      interval: 1m30s
-      timeout: 10s
-      retries: 3
-      start_period: 30s
 
-  ## Need to find a lighter app, glances takes some CPU
-  ## Whenever you need to start it, you can use the shell alias command 'glanes'
-  ## and stop it by 'glances-stop'. Both of these start the docker container.
+  termix:
+    container_name: termix
+    image: ghcr.io/lukegus/termix:latest
+    restart: unless-stopped
+    depends_on:
+      - guacd
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./termix-data:/app/data
+    environment:
+      PORT: '8080'
+    networks:
+      - termix-net
 
-  # glances:
-  #   container_name: glances
-  #   image: nicolargo/glances:latest
-  #   restart: unless-stopped
-  #   ports:
-  #     - "61208:61208"
-  #   volumes:
-  #     - /var/run/docker.sock:/var/run/docker.sock:ro
-  #   environment:
-  #     GLANCES_OPT: -w
-  #     PUID: "1000"
-  #     PGID: "1000"
-  #     TZ: Asia/Kolkata
-  #   pid: host
-  #   privileged: true
-
-  server:
-    container_name: server_self_hosted
-    image: standardnotes/server
+  guacd:
+    container_name: guacd
+    image: guacamole/guacd:1.6.0
     restart: unless-stopped
     ports:
-      - 3000:3000
-      - 3125:3104
-    volumes:
-      - ./standardnotes/logs:/var/lib/server/logs
-      - ./standardnotes/uploads:/opt/server/packages/files/dist/uploads
-    env_file: ./standardnotes/.env
+      - "4822:4822"
     networks:
-      - standardnotes_self_hosted
+      - termix-net
 
-  localstack:
-    container_name: localstack_self_hosted
-    image: localstack/localstack:3.0
-    restart: unless-stopped
-    expose:
-      - 4566
-    volumes:
-      - ./standardnotes/localstack_bootstrap.sh:/etc/localstack/init/ready.d/localstack_bootstrap.sh
-    environment:
-      - SERVICES=sns,sqs
-      - HOSTNAME_EXTERNAL=localstack
-      - LS_LOG=warn
-    networks:
-      - standardnotes_self_hosted
-
-  db:
-    container_name: db_self_hosted
-    image: mysql:8
-    restart: unless-stopped
-    expose:
-      - 3306
-    volumes:
-      - ./standardnotes/data/mysql:/var/lib/mysql
-      - ./standardnotes/data/import:/docker-entrypoint-initdb.d
-    environment:
-      - MYSQL_DATABASE=standard_notes_db
-      - MYSQL_USER=std_notes_user
-      - MYSQL_ROOT_PASSWORD=b440ea7a97bb823a23b07fd2
-      - MYSQL_PASSWORD=b440ea7a97bb823a23b07fd2
-    networks:
-      - standardnotes_self_hosted
-
-  cache:
-    container_name: cache_self_hosted
-    image: redis:6.0-alpine
-    restart: unless-stopped
-    expose:
-      - 6379
-    volumes:
-      - ./standardnotes/data/redis/:/data
-    networks:
-      - standardnotes_self_hosted
+volumes:
+  termix-data:
+    driver: local
 
 networks:
-  standardnotes_self_hosted:
-    name: standardnotes_self_hosted
+  termix-net:
+    driver: bridge
+  default:
+    name: shared_services
