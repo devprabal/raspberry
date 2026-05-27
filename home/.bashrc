@@ -112,6 +112,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+alias gits="git status"
+alias gitb="git branch"
+alias gitlog="git log --all --oneline --decorate --graph"
 alias bat="batcat"
 alias cputemp="cat /sys/class/thermal/thermal_zone0/temp"
 alias glances="docker run -d \
