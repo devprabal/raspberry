@@ -1,0 +1,25 @@
+appConfig:
+  theme: colorful
+  language: en-GB
+  layout: horizontal
+  iconSize: large
+pageInfo:
+  title: Welcome to devpogi's raspberry
+  description: simple is elegant
+sections:
+  - name: Services
+    icon: mdi-rocket-launch
+    items:
+      - title: Linkding
+        description: Read later bookmarks
+        url: http://10.212.244.230:9090/bookmarks
+        icon: sh-linkding
+      - title: Glances
+        description: Monitoring rpi
+        icon: sh-glances
+        url: http://10.212.244.230:61208
+      - title: Flatnotes
+        description: Markdown editor
+        icon: sh-flatnotes
+        url: http://10.212.244.230:8100
+pages: []
