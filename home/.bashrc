@@ -129,3 +129,4 @@ alias glances="docker run -d \
   --privileged \
   nicolargo/glances:latest"
 alias glances-stop="docker stop glances && docker rm glances"
+alias dnames="docker ps -a --format '{{.Names}}'"

@@ -30,5 +30,20 @@ sections:
         icon: sh-termix
         url: http://10.212.244.230:8080/
         target: newtab
-        id: temp_Termix
+        id: 3_836_termix
+      - title: llama.cpp
+        description: LLM inference
+        icon: sh-llama-cpp
+        url: http://10.212.244.230:8300/
+        target: newtab
+        displayData: launch manually, see flatnotes
+        id: 4_836_llamacpp
+  - name: Information
+    items:
+      - title: Run llama.cpp
+        description: how to start?
+        icon: mdi-note
+        url: http://10.212.244.230:8100/note/run%20llama%20cpp%20server%20on%20rpi
+        target: newtab
+        id: 0_1158_runllamacpp
 pages: []
