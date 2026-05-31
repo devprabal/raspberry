@@ -56,6 +56,19 @@ services:
     networks:
       - termix-net
 
+  homeassistant:
+    container_name: homeassistant
+    image: "ghcr.io/home-assistant/home-assistant:stable"
+    volumes:
+      - ./homeassistant-data:/config
+      - /etc/localtime:/etc/localtime:ro
+      - /run/dbus:/run/dbus:ro
+    restart: unless-stopped
+    privileged: true
+    network_mode: host
+    environment:
+      TZ: Asia/Kolkata
+
 volumes:
   termix-data:
     driver: local
@@ -65,3 +78,4 @@ networks:
     driver: bridge
   default:
     name: shared_services
+

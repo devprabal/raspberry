@@ -38,6 +38,12 @@ sections:
         target: newtab
         displayData: launch manually, see flatnotes
         id: 4_836_llamacpp
+      - title: Home Assistant
+        description: Smart Home IoT
+        icon: sh-home-assistant
+        url: http://10.212.244.230:8123/
+        target: newtab
+        id: 5_836_homeassistant
   - name: Information
     items:
       - title: Run llama.cpp
@@ -46,4 +52,10 @@ sections:
         url: http://10.212.244.230:8100/note/run%20llama%20cpp%20server%20on%20rpi
         target: newtab
         id: 0_1158_runllamacpp
+      - title: Run glances
+        description: how to start?
+        icon: mdi-note
+        url: http://10.212.244.230:8100/note/Run%20glances
+        target: newtab
+        id: 1_1158_runglances
 pages: []
