@@ -19,3 +19,12 @@ Terminal access with system stats, file managment, docker management by [termix]
 
 Quick Notes, simple markdown based, no clutter [flatnotes](https://github.com/dullage/flatnotes):  
 ![Flatnotes](./attachments/flatnotes.png)
+
+IoT integrations with [Home Assistant](https://www.home-assistant.io/installation/raspberrypi-other):  
+![HA](./attachments/HA.png)
+
+AI inferencing using [llama.cpp](https://github.com/ggml-org/llama.cpp/tree/master/tools/server):  
+![llama-server](./attachments/llamacpp.png)
+
+`top` but more detailed system stats, using [glances](https://github.com/nicolargo/glances):  
+![glances](./attachments/glances.png)
