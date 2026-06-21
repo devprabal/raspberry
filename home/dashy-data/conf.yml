@@ -50,6 +50,12 @@ sections:
         url: http://10.212.244.230:8200/
         target: newtab
         id: 6_836_ittools
+      - title: Miniserve
+        description: File browser & Pastebin
+        icon: sh-miniserve
+        url: http://10.212.244.230:8300/miniserve-data/
+        target: newtab
+        id: temp_Miniserve
   - name: Information
     items:
       - title: Run llama.cpp

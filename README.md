@@ -28,3 +28,9 @@ AI inferencing using [llama.cpp](https://github.com/ggml-org/llama.cpp/tree/mast
 
 `top` but more detailed system stats, using [glances](https://github.com/nicolargo/glances):  
 ![glances](./attachments/glances.png)
+
+Dev tools using [IT-Tools](https://github.com/CorentinTh/it-tools):  
+![it_tools](./attachments/it_tools.png)
+
+Simple HTTP based file browser and pastebin using [Miniserve](https://github.com/svenstaro/miniserve):  
+![miniserve](./attachments/miniserve.png)
