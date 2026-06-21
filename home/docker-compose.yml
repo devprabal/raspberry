@@ -1,81 +1,88 @@
 services:
 
-  flatnotes:
-    container_name: flatnotes
-    image: dullage/flatnotes:latest
-    restart: unless-stopped
-    ports:
-      - "8100:8080"
-    volumes:
-      - ./flatnotes/notes:/data
-      - ./flatnotes/index:/data/.flatnotes
-    environment:
-      PUID: "1000"
-      PGID: "1000"
-      FLATNOTES_AUTH_TYPE: none
+    flatnotes:
+        container_name: flatnotes
+        image: dullage/flatnotes:latest
+        restart: unless-stopped
+        ports:
+            - "8100:8080"
+        volumes:
+            - ./flatnotes/notes:/data
+            - ./flatnotes/index:/data/.flatnotes
+        environment:
+            PUID: "1000"
+            PGID: "1000"
+            FLATNOTES_AUTH_TYPE: none
 
-  linkding:
-    container_name: linkding
-    image: sissbruecker/linkding:latest
-    restart: unless-stopped
-    ports:
-      - "9090:9090"
-    volumes:
-      - ./linkding-db:/etc/linkding/data
+    linkding:
+        container_name: linkding
+        image: sissbruecker/linkding:latest
+        restart: unless-stopped
+        ports:
+            - "9090:9090"
+        volumes:
+            - ./linkding-db:/etc/linkding/data
 
-  dashy:
-    container_name: Dashy
-    image: lissy93/dashy:latest
-    restart: unless-stopped
-    ports:
-      - 4000:8080
-    volumes:
-      - ./dashy-data:/app/user-data
+    dashy:
+        container_name: Dashy
+        image: lissy93/dashy:latest
+        restart: unless-stopped
+        ports:
+            - 4000:8080
+        volumes:
+            - ./dashy-data:/app/user-data
 
-  termix:
-    container_name: termix
-    image: ghcr.io/lukegus/termix:latest
-    restart: unless-stopped
-    depends_on:
-      - guacd
-    ports:
-      - '8080:8080'
-    volumes:
-      - ./termix-data:/app/data
-    environment:
-      PORT: '8080'
-    networks:
-      - termix-net
+    termix:
+        container_name: termix
+        image: ghcr.io/lukegus/termix:latest
+        restart: unless-stopped
+        depends_on:
+            - guacd
+        ports:
+            - '8080:8080'
+        volumes:
+            - ./termix-data:/app/data
+        environment:
+            PORT: '8080'
+        networks:
+            - termix-net
 
-  guacd:
-    container_name: guacd
-    image: guacamole/guacd:1.6.0
-    restart: unless-stopped
-    ports:
-      - "4822:4822"
-    networks:
-      - termix-net
+    guacd:
+        container_name: guacd
+        image: guacamole/guacd:1.6.0
+        restart: unless-stopped
+        ports:
+            - "4822:4822"
+        networks:
+            - termix-net
 
-  homeassistant:
-    container_name: homeassistant
-    image: "ghcr.io/home-assistant/home-assistant:stable"
-    volumes:
-      - ./homeassistant-data:/config
-      - /etc/localtime:/etc/localtime:ro
-      - /run/dbus:/run/dbus:ro
-    restart: unless-stopped
-    privileged: true
-    network_mode: host
-    environment:
-      TZ: Asia/Kolkata
+    homeassistant:
+        ## runs on port 8123
+        container_name: homeassistant
+        image: "ghcr.io/home-assistant/home-assistant:stable"
+        restart: unless-stopped
+        volumes:
+            - ./homeassistant-data:/config
+            - /etc/localtime:/etc/localtime:ro
+            - /run/dbus:/run/dbus:ro
+        environment:
+            TZ: Asia/Kolkata
+        network_mode: host
+        privileged: true
+
+    it-tools:
+        container_name: it-tools
+        image: corentinth/it-tools:latest
+        restart: unless-stopped
+        ports:
+            - "8200:80"
 
 volumes:
-  termix-data:
-    driver: local
+    termix-data:
+        driver: local
 
 networks:
-  termix-net:
-    driver: bridge
-  default:
-    name: shared_services
-
+    termix-net:
+        driver: bridge
+    default:
+        name: shared_services
