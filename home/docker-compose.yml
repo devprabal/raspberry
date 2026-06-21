@@ -1,108 +1,119 @@
 services:
+    flatnotes:
+        container_name: flatnotes
+        image: dullage/flatnotes:latest
+        restart: unless-stopped
+        ports:
+            - "8100:8080"
+        volumes:
+            - ./flatnotes/notes:/data
+            - ./flatnotes/index:/data/.flatnotes
+        environment:
+            PUID: "1000"
+            PGID: "1000"
+            FLATNOTES_AUTH_TYPE: none
 
-  flatnotes:
-    container_name: flatnotes
-    image: dullage/flatnotes:latest
-    restart: unless-stopped
-    ports:
-      - "8100:8080"
-    volumes:
-      - ./flatnotes/notes:/data
-      - ./flatnotes/index:/data/.flatnotes
-    environment:
-      PUID: "1000"
-      PGID: "1000"
-      FLATNOTES_AUTH_TYPE: none
+    linkding:
+        container_name: linkding
+        image: sissbruecker/linkding:latest
+        restart: unless-stopped
+        ports:
+            - "9090:9090"
+        volumes:
+            - ./linkding-db:/etc/linkding/data
 
-  linkding:
-    container_name: linkding
-    image: sissbruecker/linkding:latest
-    restart: unless-stopped
-    ports:
-      - "9090:9090"
-    volumes:
-      - ./linkding-db:/etc/linkding/data
+    dashy:
+        container_name: Dashy
+        image: lissy93/dashy:latest
+        restart: unless-stopped
+        ports:
+            - 4000:8080
+        volumes:
+            - ./dashy-data:/app/user-data
 
-  dashy:
-    container_name: Dashy
-    image: lissy93/dashy:latest
-    restart: unless-stopped
-    ports:
-      - 4000:8080
-    volumes:
-      - ./dashy-data:/app/user-data
+    termix:
+        container_name: termix
+        image: ghcr.io/lukegus/termix:latest
+        restart: unless-stopped
+        depends_on:
+            - guacd
+        ports:
+            - "8080:8080"
+        volumes:
+            - ./termix-data:/app/data
+        environment:
+            PORT: "8080"
+        networks:
+            - termix-net
 
-  termix:
-    container_name: termix
-    image: ghcr.io/lukegus/termix:latest
-    restart: unless-stopped
-    depends_on:
-      - guacd
-    ports:
-      - '8080:8080'
-    volumes:
-      - ./termix-data:/app/data
-    environment:
-      PORT: '8080'
-    networks:
-      - termix-net
+    guacd:
+        container_name: guacd
+        image: guacamole/guacd:1.6.0
+        restart: unless-stopped
+        ports:
+            - "4822:4822"
+        networks:
+            - termix-net
 
-  guacd:
-    container_name: guacd
-    image: guacamole/guacd:1.6.0
-    restart: unless-stopped
-    ports:
-      - "4822:4822"
-    networks:
-      - termix-net
+    homeassistant:
+        ## runs on port 8123
+        container_name: homeassistant
+        image: "ghcr.io/home-assistant/home-assistant:stable"
+        restart: unless-stopped
+        volumes:
+            - ./homeassistant-data:/config
+            - /etc/localtime:/etc/localtime:ro
+            - /run/dbus:/run/dbus:ro
+        environment:
+            TZ: Asia/Kolkata
+        network_mode: host
+        privileged: true
 
-  homeassistant:
-    ## runs on port 8123
-    container_name: homeassistant
-    image: "ghcr.io/home-assistant/home-assistant:stable"
-    restart: unless-stopped
-    volumes:
-      - ./homeassistant-data:/config
-      - /etc/localtime:/etc/localtime:ro
-      - /run/dbus:/run/dbus:ro
-    environment:
-      TZ: Asia/Kolkata
-    network_mode: host
-    privileged: true
+    it-tools:
+        container_name: it-tools
+        image: corentinth/it-tools:latest
+        restart: unless-stopped
+        ports:
+            - "8200:80"
 
-  it-tools:
-    container_name: it-tools
-    image: corentinth/it-tools:latest
-    restart: unless-stopped
-    ports:
-      - "8200:80"
+    svenstaro:
+        container_name: miniserve
+        image: docker.io/svenstaro/miniserve
+        restart: unless-stopped
+        ports:
+            - "8300:8080"
+        volumes:
+            - "/home/devpogi:/tmp"
+        command:
+            - --upload-files=/miniserve-data
+            # - --random-route ##
+            ### with random route enabled, you will need to check terminal to get the route like
+            ### http://10.212.244.230:8300/b9f1fb/ which always changes
+            - --color-scheme-dark=zenburn
+            - --pastebin
+            - --enable-tar-gz
+            - /tmp
+        # stdin_open: true
+        # tty: true
 
-  svenstaro:
-    container_name: miniserve
-    image: docker.io/svenstaro/miniserve
-    restart: unless-stopped
-    ports:
-      - "8300:8080"
-    volumes:
-      - "/home/devpogi:/tmp"
-    command:
-      - --upload-files=/miniserve-data
-      # - --random-route ##
-      ### with random route enabled, you will need to check terminal to get the route like 
-      ### http://10.212.244.230:8300/b9f1fb/ which always changes
-      - --color-scheme-dark=zenburn
-      - --pastebin
-      - --enable-tar-gz
-      - /tmp
-    stdin_open: true
-    tty: true
+    alpine-cgit:
+        ## config: cgitrc: https://linux.die.net/man/5/cgitrc
+        ## edit .git/description file
+        ## to remove 'Unnamed repository; edit this ...' text
+        container_name: alpine_cgit
+        image: joseluisq/alpine-cgit
+        restart: unless-stopped
+        ports:
+            - "8787:80"
+        volumes:
+            - "./repos/:/srv/git/"
 
 volumes:
-  termix-data:
-    driver: local
+    termix-data:
+        driver: local
 
 networks:
-  termix-net:
-    driver: bridge
-  default:
-    name: shared_services
+    termix-net:
+        driver: bridge
+    default:
+        name: shared_services

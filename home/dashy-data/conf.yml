@@ -55,7 +55,13 @@ sections:
         icon: sh-miniserve
         url: http://10.212.244.230:8300/miniserve-data/
         target: newtab
-        id: temp_Miniserve
+        id: 7_836_miniserve
+      - title: Cgit
+        description: C-based web ui for git repos
+        icon: sh-git
+        url: http://10.212.244.230:8787/
+        target: newtab
+        id: 8_836_cgit
   - name: Information
     items:
       - title: Run llama.cpp
