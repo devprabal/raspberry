@@ -62,6 +62,12 @@ sections:
         url: http://10.212.244.230:8787/
         target: newtab
         id: 8_836_cgit
+      - title: Grimmory
+        description: Books
+        icon: sh-grimmory
+        url: http://10.212.244.230:6060/
+        target: newtab
+        id: 9_836_grimmory
   - name: Information
     items:
       - title: Run llama.cpp

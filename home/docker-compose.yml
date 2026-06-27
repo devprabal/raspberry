@@ -108,6 +108,45 @@ services:
         volumes:
             - "./repos/:/srv/git/"
 
+    grimmory:
+        container_name: grimmory
+        image: grimmory/grimmory:latest
+        restart: unless-stopped
+        depends_on:
+            mariadb:
+                condition: service_healthy
+        ports:
+            - "6060:6060"
+        volumes:
+            - ./grimmory-data/data:/app/data
+            - ./grimmory-data/books:/books
+            - ./grimmory-data/bookdrop:/bookdrop
+        environment:
+            - USER_ID=1000
+            - GROUP_ID=1000
+            - TZ=Asia/Kolkata
+            - DATABASE_URL=jdbc:mariadb://mariadb:3306/grimmory
+        env_file:
+            - ./grimmory-data/.env
+
+    mariadb:
+        image: lscr.io/linuxserver/mariadb:11.4.5
+        restart: unless-stopped
+        volumes:
+            - ./mariadb-data/config:/config
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - TZ=Asia/Kolkata
+        env_file:
+            - ./mariadb-data/.env
+        healthcheck:
+            test: ["CMD-SHELL", "mysqladmin --silent ping -h 127.0.0.1 -u root -p\"$$MYSQL_ROOT_PASSWORD\""]
+            interval: 10s
+            timeout: 5s
+            retries: 5
+            start_period: 30s
+
 volumes:
     termix-data:
         driver: local
