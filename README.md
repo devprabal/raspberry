@@ -34,3 +34,9 @@ Dev tools using [IT-Tools](https://github.com/CorentinTh/it-tools):
 
 Simple HTTP based file browser and pastebin using [Miniserve](https://github.com/svenstaro/miniserve):  
 ![miniserve](./attachments/miniserve.png)
+
+Git web interface viewer using [cgit](https://github.com/joseluisq/alpine-cgit):  
+![alpine-cgit](./attachments/alpine_cgit.png)
+
+E-books management using [Grimmory](https://github.com/grimmory-tools/grimmory):  
+![grimmory](./attachments/grimmory.png)
