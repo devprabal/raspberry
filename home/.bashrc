@@ -117,6 +117,7 @@ alias gitb="git branch"
 alias gitlog="git log --all --oneline --decorate --graph"
 alias bat="batcat"
 alias cputemp="cat /sys/class/thermal/thermal_zone0/temp"
+alias gputemp="vcgencmd measure_temp"
 alias glances="docker run -d \
   --name glances \
   -p 61208:61208 \
