@@ -131,3 +131,6 @@ alias glances="docker run -d \
   nicolargo/glances:latest"
 alias glances-stop="docker stop glances && docker rm glances"
 alias dnames="docker ps -a --format '{{.Names}}'"
+
+## https://github.com/Eugeny/tabby/wiki/Shell-working-directory-reporting
+export PS1="$PS1\[\e]1337;CurrentDir="'$(pwd)\a\]'
