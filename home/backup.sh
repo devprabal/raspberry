@@ -27,8 +27,12 @@ cp -r ~/flatnotes/notes/* ./flatnotes/notes/
 # mkdir -p homeassistant-data
 # cp -r ~/homeassistant-data/* ./homeassistant-data/
 
+## hermes agent
+mkdir -p hermes-data
+cp -r ~/hermes-data/compose.yml ./hermes-data/compose.yml
+# cp -r ~/hermes-data/config.yaml ./hermes-data/config.yaml
+
 ## linkding
 mkdir -p linkding-db
 cp ~/linkding-db/db.sqlite3 ./linkding-db/db.sqlite3
 cp ~/linkding-db/tasks.sqlite3 ./linkding-db/tasks.sqlite3
-

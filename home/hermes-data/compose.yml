@@ -1,0 +1,21 @@
+## (first time)
+## use docker exec hermes hermes setup
+## (or just run simple docker cmd without compose, persistent data will be kept in ~/.hermes)
+services:
+  hermes:
+    container_name: hermes
+    image: nousresearch/hermes-agent:latest
+    restart: unless-stopped
+    ports:
+      - "8642:8642" # gateway API
+      # - "9119:9119" # dashboard (only reached when HERMES_DASHBOARD=1)
+    volumes:
+      ## note: this data is saved in ~/.hermes, not ~/hermes-data (although I have a symlink here)
+      - ~/.hermes:/opt/data
+    command: gateway run
+    ## Your kernel does not support memory limit capabilities or the cgroup is not mounted. Limitation discarded.
+    # deploy:
+    #   resources:
+    #     limits:
+    #       memory: 1G
+    #       # cpus: "0.7"
