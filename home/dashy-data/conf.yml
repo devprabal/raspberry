@@ -3,9 +3,14 @@ appConfig:
   language: en-GB
   layout: horizontal
   iconSize: large
+  statusCheckInterval: 10
+  showSplashScreen: true
 pageInfo:
   title: Welcome to devpogi's raspberry
   description: simple is elegant
+  navLinks:
+    - title: Github
+      path: https://github.com/devprabal/raspberry
 sections:
   - name: Services
     icon: mdi-rocket-launch
