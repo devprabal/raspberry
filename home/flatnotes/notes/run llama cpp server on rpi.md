@@ -7,7 +7,7 @@
 ```bash
 docker run \
   --name llama_server \
-  -p 8300:8080 \
+  -p 8500:8080 \
   -v "./models:/models" \
   ghcr.io/ggml-org/llama.cpp:server \
   --port 8080 \
@@ -20,4 +20,4 @@ docker run \
 ```
 
 - You can customize this command accordingly.
-- Open ui [click here](http://10.212.244.230:8200/)
+- Open ui [click here](http://10.212.244.230:8500/)

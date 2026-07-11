@@ -3,14 +3,9 @@ appConfig:
   language: en-GB
   layout: horizontal
   iconSize: large
-  statusCheckInterval: 10
-  showSplashScreen: true
 pageInfo:
   title: Welcome to devpogi's raspberry
   description: simple is elegant
-  navLinks:
-    - title: Github
-      path: https://github.com/devprabal/raspberry
 sections:
   - name: Services
     icon: mdi-rocket-launch
@@ -39,9 +34,9 @@ sections:
       - title: llama.cpp
         description: LLM inference
         icon: sh-llama-cpp
-        url: http://10.212.244.230:8300/
-        target: newtab
+        url: http://10.212.244.230:8500/
         displayData: launch manually, see flatnotes
+        target: newtab
         id: 4_836_llamacpp
       - title: Home Assistant
         description: Smart Home IoT
