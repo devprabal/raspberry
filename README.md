@@ -40,3 +40,6 @@ Git web interface viewer using [cgit](https://github.com/joseluisq/alpine-cgit):
 
 E-books management using [Grimmory](https://github.com/grimmory-tools/grimmory):  
 ![grimmory](./attachments/grimmory.png)
+
+RPI and docker:  
+![fastfetch](./attachments/fastfetch_docker_images.png)  
