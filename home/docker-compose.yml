@@ -156,3 +156,6 @@ networks:
         driver: bridge
     default:
         name: shared_services
+
+include:
+    - ./sparkyfitness-data/compose.yml

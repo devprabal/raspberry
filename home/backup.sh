@@ -32,3 +32,6 @@ mkdir -p linkding-db
 cp ~/linkding-db/db.sqlite3 ./linkding-db/db.sqlite3
 cp ~/linkding-db/tasks.sqlite3 ./linkding-db/tasks.sqlite3
 
+## sparkyfitness
+mkdir -p sparkyfitness-data
+cp -r ~/sparkyfitness-data/compose.yml ./sparkyfitness-data/compose.yml
