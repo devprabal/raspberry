@@ -87,4 +87,10 @@ sections:
         url: http://10.212.244.230:8100/note/Run%20glances
         target: newtab
         id: 1_1158_runglances
+      - title: hermes-agent
+        description: how to run?
+        icon: sh-hermes-agent
+        url: http://10.212.244.230:8100/note/hermes-agent
+        target: newtab
+        id: temp_hermes-agent
 pages: []
