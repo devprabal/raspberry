@@ -87,10 +87,16 @@ sections:
         url: http://10.212.244.230:8100/note/Run%20glances
         target: newtab
         id: 1_1158_runglances
-      - title: hermes-agent
-        description: how to run?
-        icon: sh-hermes-agent
-        url: http://10.212.244.230:8100/note/hermes-agent
+    icon: mdi-message
+  - name: Local
+    icon: mdi-home
+    displayData:
+      collapsed: true
+    items:
+      - title: winston
+        description: mkdocs serve -a 0.0.0.0:8019
+        icon: sh-material-for-mkdocs
+        url: http://10.212.244.230:8019/
         target: newtab
-        id: temp_hermes-agent
+        id: temp_winston
 pages: []
