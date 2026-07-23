@@ -73,6 +73,12 @@ sections:
         url: http://10.212.244.230:6060/
         target: newtab
         id: 9_836_grimmory
+      - title: Anchor
+        description: google keep notes backup
+        icon: sh-anchor-notes
+        url: http://10.212.244.230:8600/
+        target: newtab
+        id: 10_836_anchor
   - name: Information
     items:
       - title: Run llama.cpp
@@ -98,5 +104,5 @@ sections:
         icon: sh-material-for-mkdocs
         url: http://10.212.244.230:8019/
         target: newtab
-        id: temp_winston
+        id: 0_491_winston
 pages: []

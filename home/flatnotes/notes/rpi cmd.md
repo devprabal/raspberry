@@ -5,3 +5,9 @@ Divide by 1000
 cat /sys/class/thermal/thermal_zone0/temp
 ```
 
+## random number
+
+```bash
+openssl rand -hex 32
+```
+

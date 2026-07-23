@@ -43,3 +43,6 @@ E-books management using [Grimmory](https://github.com/grimmory-tools/grimmory):
 
 RPI and docker:  
 ![fastfetch](./attachments/fastfetch_docker_images.png)  
+
+[Anchor](https://github.com/ZhFahim/anchor) for backing up google keep notes:  
+![anchor](./attachments/anchor.png)

@@ -160,3 +160,6 @@ networks:
 ### works but cannot communicate to tg, so use cmd line docker instead of compose, see flatnotes  
 # include:
 #     - ./hermes-data/compose.yml
+
+include:
+    - ./anchor-data/compose.yml
