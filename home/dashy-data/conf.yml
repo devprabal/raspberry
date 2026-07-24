@@ -88,12 +88,6 @@ sections:
         url: http://10.212.244.230:8611/
         target: newtab
         id: 2_1062_dozzle
-      - title: Dockpeek
-        description: docker port mapping
-        icon: sh-dockpeek
-        url: http://10.212.244.230:8711/
-        target: newtab
-        id: temp_Dockpeek
   - name: Information
     items:
       - title: Run llama.cpp
