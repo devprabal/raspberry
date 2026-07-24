@@ -46,3 +46,6 @@ RPI and docker:
 
 [Anchor](https://github.com/ZhFahim/anchor) for backing up google keep notes:  
 ![anchor](./attachments/anchor.png)
+
+Docker logs on web using [Dozzle](https://github.com/amir20/dozzle):
+![dozzle](./attachments/dozzle.png)

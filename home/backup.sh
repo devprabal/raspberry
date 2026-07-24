@@ -14,6 +14,10 @@ cp ~/anchor-data/compose.yml ./anchor-data/compose.yml
 mkdir -p dashy-data
 cp ~/dashy-data/conf.yml ./dashy-data/conf.yml
 
+## dozzle
+mkdir -p dozzle-data
+cp ~/dozzle-data/compose.yml ./dozzle-data/compose.yml
+
 ## flatnotes
 mkdir -p flatnotes
 cp -r ~/flatnotes/notes/* ./flatnotes/notes/

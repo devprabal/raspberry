@@ -163,3 +163,4 @@ networks:
 
 include:
     - ./anchor-data/compose.yml
+    - ./dozzle-data/compose.yml
