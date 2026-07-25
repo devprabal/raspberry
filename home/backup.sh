@@ -44,3 +44,7 @@ cp -r ~/hermes-data/compose.yml ./hermes-data/compose.yml
 mkdir -p linkding-db
 cp ~/linkding-db/db.sqlite3 ./linkding-db/db.sqlite3
 cp ~/linkding-db/tasks.sqlite3 ./linkding-db/tasks.sqlite3
+
+## pi-hole
+mkdir -p pi-hole-data
+cp ~/pi-hole-data/compose.yml ./pi-hole-data/compose.yml

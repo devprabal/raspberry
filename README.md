@@ -11,7 +11,7 @@ Here are some screenshots:
 Dashboard with [Dashy](https://dashy.to/):  
 ![Dashboard](./attachments/dashy.png)
 
-Read it later service [Linkding](https://linkding.link/), I use it together with [Pinkit android](https://github.com/fibelatti/pinboard-kotlin):  
+Read it later service [Linkding](https://linkding.link/). I use it together with [Pinkit android](https://github.com/fibelatti/pinboard-kotlin):  
 ![Linkding](./attachments/linkding.png)
 
 Terminal access with system stats, file managment, docker management by [termix](https://github.com/Termix-SSH/Termix):  
@@ -38,7 +38,7 @@ Simple HTTP based file browser and pastebin using [Miniserve](https://github.com
 Git web interface viewer using [cgit](https://github.com/joseluisq/alpine-cgit):  
 ![alpine-cgit](./attachments/alpine_cgit.png)
 
-E-books management using [Grimmory](https://github.com/grimmory-tools/grimmory):  
+E-books management using [Grimmory](https://github.com/grimmory-tools/grimmory). I use it together with Android app [readest](https://github.com/readest/readest):  
 ![grimmory](./attachments/grimmory.png)
 
 RPI and docker:  
@@ -49,3 +49,6 @@ RPI and docker:
 
 Docker logs on web using [Dozzle](https://github.com/amir20/dozzle):
 ![dozzle](./attachments/dozzle.png)
+
+DNS and Ad blocking using [pi-hole](https://github.com/pi-hole/docker-pi-hole) with the [huge blocklist](https://firebog.net/):  
+![pi-hole](./attachments/pihole.png)
