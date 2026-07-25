@@ -88,6 +88,12 @@ sections:
         url: http://10.212.244.230:8611/
         target: newtab
         id: 2_1062_dozzle
+      - title: pi-hole
+        description: DNS and Ad-blocking
+        icon: sh-pi-hole
+        url: http://10.212.244.230/admin/login
+        target: newtab
+        id: 3_1062_pihole
   - name: Information
     items:
       - title: Run llama.cpp
