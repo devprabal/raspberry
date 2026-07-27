@@ -12,7 +12,7 @@ docker run \
   ghcr.io/ggml-org/llama.cpp:server \
   --port 8080 \
   -n 512 \
-  -m /models/Qwen3-0.6B-UD-Q3_K_XL.gguf \
+  -m /models/qwen2.5-0.5b-instruct-q4_0.gguf \
   --temp 0.6 \
   --min-p 0.0 \
   --top-p 0.95 \

@@ -5,6 +5,7 @@
 ## ~/ dotfiles
 cp ~/docker-compose.yml docker-compose.yml
 cp ~/.bashrc .bashrc
+cp ~/dstop.sh dstop.sh
 
 ## anchor
 mkdir -p anchor-data
@@ -47,4 +48,7 @@ cp ~/linkding-db/tasks.sqlite3 ./linkding-db/tasks.sqlite3
 
 ## pi-hole
 mkdir -p pi-hole-data
+## claude says not to publicly backup the toml config file for pihole
+#mkdir -p pi-hole-data/etc-pihole
 cp ~/pi-hole-data/compose.yml ./pi-hole-data/compose.yml
+#cp ~/pi-hole-data/etc-pihole/pihole.toml ./pi-hole-data/etc-pihole/pihole.toml
