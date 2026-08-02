@@ -11,7 +11,7 @@ Here are some screenshots:
 Dashboard with [Dashy](https://dashy.to/):  
 ![Dashboard](./attachments/dashy.png)
 
-Read it later service [Linkding](https://linkding.link/). I use it together with [Pinkit android](https://github.com/fibelatti/pinboard-kotlin):  
+Read it later service [Linkding](https://linkding.link/). I use it together with [Pinkit android](https://github.com/fibelatti/pinboard-kotlin) and [linkding chrome extension](https://github.com/jeroenpardon/linkding-extension):  
 ![Linkding](./attachments/linkding.png)
 
 Terminal access with system stats, file managment, docker management by [termix](https://github.com/Termix-SSH/Termix):  
@@ -52,3 +52,6 @@ Docker logs on web using [Dozzle](https://github.com/amir20/dozzle):
 
 DNS and Ad blocking using [pi-hole](https://github.com/pi-hole/docker-pi-hole) with the [huge blocklist](https://firebog.net/):  
 ![pi-hole](./attachments/pihole.png)
+
+Links bookmarks using [Karakeep](https://github.com/karakeep-app/karakeep/). I use it together with [karakeep android app](https://play.google.com/store/apps/details?id=app.hoarder.hoardermobile&pcampaignid=web_share) and [karakeep chrome extension](https://chromewebstore.google.com/detail/karakeep/kgcjekpmcjjogibpjebkhaanilehneje):  
+![karakeep](./attachments/karakeep.png)
