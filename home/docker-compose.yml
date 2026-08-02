@@ -165,3 +165,5 @@ include:
     - ./anchor-data/compose.yml
     - ./dozzle-data/compose.yml
     - ./pi-hole-data/compose.yml
+    - ./karakeep-data/compose.yml
+    - ./beszel-data/compose.yml

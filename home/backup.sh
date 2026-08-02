@@ -11,6 +11,10 @@ cp ~/dstop.sh dstop.sh
 mkdir -p anchor-data
 cp ~/anchor-data/compose.yml ./anchor-data/compose.yml
 
+## beszel
+mkdir -p beszel-data
+cp ~/beszel-data/compose.yml ./beszel-data/compose.yml
+
 ## dashy
 mkdir -p dashy-data
 cp ~/dashy-data/conf.yml ./dashy-data/conf.yml
@@ -31,15 +35,19 @@ cp -r ~/flatnotes/notes/* ./flatnotes/notes/
 # mkdir -p grimmory-data/bookdrop
 # cp -r ~/grimmory-data/bookdrop/* ./grimmory-data/bookdrop/
 
+## hermes agent
+mkdir -p hermes-data
+cp -r ~/hermes-data/compose.yml ./hermes-data/compose.yml
+# cp -r ~/hermes-data/config.yaml ./hermes-data/config.yaml
+
 ## homeassistant
 ## TODO: need to check what to actually backup for HA, which yaml files
 # mkdir -p homeassistant-data
 # cp -r ~/homeassistant-data/* ./homeassistant-data/
 
-## hermes agent
-mkdir -p hermes-data
-cp -r ~/hermes-data/compose.yml ./hermes-data/compose.yml
-# cp -r ~/hermes-data/config.yaml ./hermes-data/config.yaml
+## karakeep
+mkdir -p karakeep-data
+cp -r ~/karakeep-data/compose.yml ./karakeep-data/compose.yml
 
 ## linkding
 mkdir -p linkding-db
