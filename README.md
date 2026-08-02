@@ -55,3 +55,6 @@ DNS and Ad blocking using [pi-hole](https://github.com/pi-hole/docker-pi-hole) w
 
 Links bookmarks using [Karakeep](https://github.com/karakeep-app/karakeep/). I use it together with [karakeep android app](https://play.google.com/store/apps/details?id=app.hoarder.hoardermobile&pcampaignid=web_share) and [karakeep chrome extension](https://chromewebstore.google.com/detail/karakeep/kgcjekpmcjjogibpjebkhaanilehneje):  
 ![karakeep](./attachments/karakeep.png)
+
+Docker stats and system stats using [Beszel](https://github.com/henrygd/beszel):  
+![beszel](./attachments/beszel.png)

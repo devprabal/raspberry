@@ -11,6 +11,10 @@ cp ~/dstop.sh dstop.sh
 mkdir -p anchor-data
 cp ~/anchor-data/compose.yml ./anchor-data/compose.yml
 
+## beszel
+mkdir -p beszel-data
+cp ~/beszel-data/compose.yml ./beszel-data/compose.yml
+
 ## dashy
 mkdir -p dashy-data
 cp ~/dashy-data/conf.yml ./dashy-data/conf.yml
