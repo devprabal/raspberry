@@ -26,6 +26,7 @@ cp ~/dozzle-data/compose.yml ./dozzle-data/compose.yml
 ## flatnotes
 mkdir -p flatnotes
 cp -r ~/flatnotes/notes/* ./flatnotes/notes/
+cp -r ~/flatnotes/notes/attachments/* ./flatnotes/notes/attachments/
 
 ## grimmory
 ## TODO: how to export / sync grimmory settings (configs)?
