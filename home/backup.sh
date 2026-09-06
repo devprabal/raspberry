@@ -6,6 +6,7 @@
 cp ~/docker-compose.yml docker-compose.yml
 cp ~/.bashrc .bashrc
 cp ~/dstop.sh dstop.sh
+cp ~/winston.sh winston.sh
 
 ## anchor
 mkdir -p anchor-data
