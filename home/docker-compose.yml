@@ -168,4 +168,6 @@ include:
     - ./karakeep-data/compose.yml
     - ./beszel-data/compose.yml
     - ./frankmd/compose.yml
-
+    - ./bookorbit/compose.yml
+    - ./audiobookshelf/compose.yml
+    - ./readeck/compose.yml

@@ -12,9 +12,17 @@ cp ~/winston.sh winston.sh
 mkdir -p anchor-data
 cp ~/anchor-data/compose.yml ./anchor-data/compose.yml
 
+## audiobookshelf
+mkdir -p audiobookshelf
+cp ~/audiobookshelf/compose.yml ./audiobookshelf/compose.yml
+
 ## beszel
 mkdir -p beszel-data
 cp ~/beszel-data/compose.yml ./beszel-data/compose.yml
+
+## bookorbit
+mkdir -p bookorbit
+cp ~/bookorbit/compose.yml ./bookorbit/compose.yml
 
 ## dashy
 mkdir -p dashy-data
@@ -28,6 +36,10 @@ cp ~/dozzle-data/compose.yml ./dozzle-data/compose.yml
 mkdir -p flatnotes
 cp -r ~/flatnotes/notes/* ./flatnotes/notes/
 cp -r ~/flatnotes/notes/attachments/* ./flatnotes/notes/attachments/
+
+## frankmd
+mkdir -p frankmd
+cp ~/frankmd/compose.yml ./frankmd/compose.yml
 
 ## grimmory
 ## TODO: how to export / sync grimmory settings (configs)?
@@ -62,3 +74,7 @@ mkdir -p pi-hole-data
 #mkdir -p pi-hole-data/etc-pihole
 cp ~/pi-hole-data/compose.yml ./pi-hole-data/compose.yml
 #cp ~/pi-hole-data/etc-pihole/pihole.toml ./pi-hole-data/etc-pihole/pihole.toml
+
+## readeck
+mkdir -p readeck
+cp ~/readeck/compose.yml ./readeck/compose.yml

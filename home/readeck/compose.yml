@@ -1,0 +1,8 @@
+services:
+  readeck:
+    container_name: readeck
+    image: 'codeberg.org/readeck/readeck:latest'
+    ports:
+      - '8217:8000'
+    volumes:
+      - './data:/readeck'

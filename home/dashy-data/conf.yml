@@ -20,10 +20,6 @@ sections:
         description: Read later articles
         icon: sh-linkding
         url: http://10.212.244.230:9090/bookmarks
-      - title: Flatnotes
-        description: Markdown editor
-        icon: sh-flatnotes
-        url: http://10.212.244.230:8100
       - title: llama.cpp
         description: LLM inference
         icon: sh-llama-cpp-light
@@ -50,11 +46,6 @@ sections:
         icon: sh-git
         url: http://10.212.244.230:8787/
         target: newtab
-      - title: Grimmory
-        description: Books
-        icon: sh-grimmory
-        url: http://10.212.244.230:6060/
-        target: newtab
       - title: Anchor
         description: google keep notes backup
         icon: sh-anchor-notes
@@ -69,6 +60,21 @@ sections:
         description: Markdown Notes
         icon: sh-frankmd
         url: http://10.212.244.230:8713/
+        target: newtab
+      - title: BookOrbit
+        description: epubs, audiobooks
+        icon: sh-bookorbit
+        url: http://10.212.244.230:8215/
+        target: newtab
+      - title: Audiobookshelf
+        description: audiobooks only
+        icon: sh-audiobookshelf
+        url: http://10.212.244.230:13378/
+        target: newtab
+      - title: Readeck
+        description: Read later articles
+        icon: sh-readeck
+        url: http://10.212.244.230:8217/
         target: newtab
   - name: Monitoring
     icon: mdi-check-all
@@ -114,12 +120,24 @@ sections:
     icon: mdi-message
   - name: Local
     icon: mdi-home
-    displayData:
-      collapsed: true
     items:
       - title: winston
         description: mkdocs serve -a 0.0.0.0:8019
         icon: sh-material-for-mkdocs
         url: http://10.212.244.230:8019/
+        target: newtab
+  - name: Deprecated
+    displayData:
+      collapsed: true
+    icon: mdi-restore-alert
+    items:
+      - title: Flatnotes
+        description: Markdown editor
+        icon: sh-flatnotes
+        url: http://10.212.244.230:8100
+      - title: Grimmory
+        description: Books
+        icon: sh-grimmory
+        url: http://10.212.244.230:6060/
         target: newtab
 pages: []

@@ -1,0 +1,11 @@
+services:
+  frankmd:
+    image: akitaonrails/frankmd:latest
+    container_name: frankmd
+    restart: unless-stopped
+    ports:
+      - "8713:80"
+    volumes:
+      - ../flatnotes/notes:/rails/notes
+    environment:
+      - SECRET_KEY_BASE=${SECRET_KEY_BASE}
