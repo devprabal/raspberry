@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Lissy93/dashy/master/src/utils/config/ConfigSchema.json
 appConfig:
   theme: colorful
   language: en-GB
@@ -19,61 +20,56 @@ sections:
         description: Read later articles
         icon: sh-linkding
         url: http://10.212.244.230:9090/bookmarks
-        id: 0_836_linkding
       - title: Flatnotes
         description: Markdown editor
         icon: sh-flatnotes
         url: http://10.212.244.230:8100
-        id: 1_836_flatnotes
       - title: llama.cpp
         description: LLM inference
-        icon: sh-llama-cpp
+        icon: sh-llama-cpp-light
         url: http://10.212.244.230:8500/
         displayData: launch manually, see flatnotes
         target: newtab
-        id: 2_836_llamacpp
       - title: Home Assistant
         description: Smart Home IoT
         icon: sh-home-assistant
         url: http://10.212.244.230:8123/
         target: newtab
-        id: 3_836_homeassistant
       - title: IT-Tools
         description: dev toys
         icon: sh-it-tools
         url: http://10.212.244.230:8200/
         target: newtab
-        id: 4_836_ittools
       - title: Miniserve
         description: File browser & Pastebin
         icon: sh-miniserve
         url: http://10.212.244.230:8300/miniserve-data/
         target: newtab
-        id: 5_836_miniserve
       - title: Cgit
         description: C-based web ui for git repos
         icon: sh-git
         url: http://10.212.244.230:8787/
         target: newtab
-        id: 6_836_cgit
       - title: Grimmory
         description: Books
         icon: sh-grimmory
         url: http://10.212.244.230:6060/
         target: newtab
-        id: 7_836_grimmory
       - title: Anchor
         description: google keep notes backup
         icon: sh-anchor-notes
         url: http://10.212.244.230:8600/
         target: newtab
-        id: 8_836_anchor
       - title: karakeep
         description: Bookmarks
         icon: sh-karakeep-light
         url: http://10.212.244.230:8711/
         target: newtab
-        id: 9_836_karakeep
+      - title: Frankmd
+        description: Markdown Notes
+        icon: sh-frankmd
+        url: http://10.212.244.230:8713/
+        target: newtab
   - name: Monitoring
     icon: mdi-check-all
     items:
@@ -81,31 +77,26 @@ sections:
         description: Monitoring rpi
         icon: sh-glances
         url: http://10.212.244.230:61208
-        id: 0_1062_glances
       - title: Termix
         description: ssh into rpi
         icon: sh-termix
         url: http://10.212.244.230:8080/
         target: newtab
-        id: 1_1062_termix
       - title: Dozzle
         description: docker logs
         icon: sh-dozzle
         url: http://10.212.244.230:8611/
         target: newtab
-        id: 2_1062_dozzle
       - title: pi-hole
         description: DNS and Ad-blocking
         icon: sh-pi-hole
         url: http://10.212.244.230/admin/login
         target: newtab
-        id: 3_1062_pihole
       - title: Beszel
         description: System & docker stats
         icon: sh-beszel
         url: http://10.212.244.230:8811/
         target: newtab
-        id: temp_Beszel
   - name: Information
     items:
       - title: Run llama.cpp
@@ -113,13 +104,13 @@ sections:
         icon: mdi-note
         url: http://10.212.244.230:8100/note/run%20llama%20cpp%20server%20on%20rpi
         target: newtab
-        id: 0_1158_runllamacpp
       - title: Run glances
         description: how to start?
         icon: mdi-note
         url: http://10.212.244.230:8100/note/Run%20glances
         target: newtab
-        id: 1_1158_runglances
+      - title: Enable not running services
+        description: Manually from docker-compose.yml
     icon: mdi-message
   - name: Local
     icon: mdi-home
@@ -131,5 +122,4 @@ sections:
         icon: sh-material-for-mkdocs
         url: http://10.212.244.230:8019/
         target: newtab
-        id: 0_491_winston
 pages: []

@@ -17,8 +17,11 @@ Read it later service [Linkding](https://linkding.link/). I use it together with
 Terminal access with system stats, file managment, docker management by [termix](https://github.com/Termix-SSH/Termix):  
 ![Termix](./attachments/termix.png)
 
-Quick Notes, simple markdown based, no clutter [flatnotes](https://github.com/dullage/flatnotes):  
-![Flatnotes](./attachments/flatnotes.png)
+Quick Notes, simple markdown based, no clutter [Frankmd](https://github.com/akitaonrails/frankmd)  
+> Used earlier: [flatnotes](https://github.com/dullage/flatnotes)  
+
+![Frankmd](./attachments/frankmd.png)
+
 
 IoT integrations with [Home Assistant](https://www.home-assistant.io/installation/raspberrypi-other):  
 ![HA](./attachments/HA.png)
@@ -58,3 +61,4 @@ Links bookmarks using [Karakeep](https://github.com/karakeep-app/karakeep/). I u
 
 Docker stats and system stats using [Beszel](https://github.com/henrygd/beszel):  
 ![beszel](./attachments/beszel.png)
+

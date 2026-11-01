@@ -1,17 +1,17 @@
 services:
-    flatnotes:
-        container_name: flatnotes
-        image: dullage/flatnotes:latest
-        restart: unless-stopped
-        ports:
-            - "8100:8080"
-        volumes:
-            - ./flatnotes/notes:/data
-            - ./flatnotes/index:/data/.flatnotes
-        environment:
-            PUID: "1000"
-            PGID: "1000"
-            FLATNOTES_AUTH_TYPE: none
+    # flatnotes:
+    #     container_name: flatnotes
+    #     image: dullage/flatnotes:latest
+    #     restart: unless-stopped
+    #     ports:
+    #         - "8100:8080"
+    #     volumes:
+    #         - ./flatnotes/notes:/data
+    #         - ./flatnotes/index:/data/.flatnotes
+    #     environment:
+    #         PUID: "1000"
+    #         PGID: "1000"
+    #         FLATNOTES_AUTH_TYPE: none
 
     linkding:
         container_name: linkding
@@ -31,29 +31,29 @@ services:
         volumes:
             - ./dashy-data:/app/user-data
 
-    termix:
-        container_name: termix
-        image: ghcr.io/lukegus/termix:latest
-        restart: unless-stopped
-        depends_on:
-            - guacd
-        ports:
-            - "8080:8080"
-        volumes:
-            - ./termix-data:/app/data
-        environment:
-            PORT: "8080"
-        networks:
-            - termix-net
+    # termix:
+    #     container_name: termix
+    #     image: ghcr.io/lukegus/termix:latest
+    #     restart: unless-stopped
+    #     depends_on:
+    #         - guacd
+    #     ports:
+    #         - "8080:8080"
+    #     volumes:
+    #         - ./termix-data:/app/data
+    #     environment:
+    #         PORT: "8080"
+    #     networks:
+    #         - termix-net
 
-    guacd:
-        container_name: guacd
-        image: guacamole/guacd:1.6.0
-        restart: unless-stopped
-        ports:
-            - "4822:4822"
-        networks:
-            - termix-net
+    # guacd:
+    #     container_name: guacd
+    #     image: guacamole/guacd:1.6.0
+    #     restart: unless-stopped
+    #     ports:
+    #         - "4822:4822"
+    #     networks:
+    #         - termix-net
 
     homeassistant:
         ## runs on port 8123
@@ -89,7 +89,7 @@ services:
             # - --random-route ##
             ### with random route enabled, you will need to check terminal to get the route like
             ### http://10.212.244.230:8300/b9f1fb/ which always changes
-            - --color-scheme-dark=zenburn
+            - --color-scheme-dark=ayu-dark
             - --pastebin
             - --enable-tar-gz
             - /tmp
@@ -108,54 +108,54 @@ services:
         volumes:
             - "./repos/:/srv/git/"
 
-    grimmory:
-        container_name: grimmory
-        image: grimmory/grimmory:latest
-        restart: unless-stopped
-        depends_on:
-            mariadb:
-                condition: service_healthy
-        ports:
-            - "6060:6060"
-        volumes:
-            - ./grimmory-data/data:/app/data
-            - ./grimmory-data/books:/books
-            - ./grimmory-data/bookdrop:/bookdrop
-        environment:
-            - USER_ID=1000
-            - GROUP_ID=1000
-            - TZ=Asia/Kolkata
-            - DATABASE_URL=jdbc:mariadb://mariadb:3306/grimmory
-        env_file:
-            - ./grimmory-data/.env
+    # grimmory:
+    #     container_name: grimmory
+    #     image: grimmory/grimmory:latest
+    #     restart: unless-stopped
+    #     depends_on:
+    #         mariadb:
+    #             condition: service_healthy
+    #     ports:
+    #         - "6060:6060"
+    #     volumes:
+    #         - ./grimmory-data/data:/app/data
+    #         - ./grimmory-data/books:/books
+    #         - ./grimmory-data/bookdrop:/bookdrop
+    #     environment:
+    #         - USER_ID=1000
+    #         - GROUP_ID=1000
+    #         - TZ=Asia/Kolkata
+    #         - DATABASE_URL=jdbc:mariadb://mariadb:3306/grimmory
+    #     env_file:
+    #         - ./grimmory-data/.env
 
-    mariadb:
-        image: lscr.io/linuxserver/mariadb:11.4.5
-        restart: unless-stopped
-        volumes:
-            - ./mariadb-data/config:/config
-        environment:
-            - PUID=1000
-            - PGID=1000
-            - TZ=Asia/Kolkata
-        env_file:
-            - ./mariadb-data/.env
-        healthcheck:
-            test: [ "CMD-SHELL", "mysqladmin --silent ping -h 127.0.0.1 -u root -p\"$$MYSQL_ROOT_PASSWORD\"" ]
-            interval: 10s
-            timeout: 5s
-            retries: 5
-            start_period: 30s
+    # mariadb:
+    #     image: lscr.io/linuxserver/mariadb:11.4.5
+    #     restart: unless-stopped
+    #     volumes:
+    #         - ./mariadb-data/config:/config
+    #     environment:
+    #         - PUID=1000
+    #         - PGID=1000
+    #         - TZ=Asia/Kolkata
+    #     env_file:
+    #         - ./mariadb-data/.env
+    #     healthcheck:
+    #         test: [ "CMD-SHELL", "mysqladmin --silent ping -h 127.0.0.1 -u root -p\"$$MYSQL_ROOT_PASSWORD\"" ]
+    #         interval: 10s
+    #         timeout: 5s
+    #         retries: 5
+    #         start_period: 30s
 
-volumes:
-    termix-data:
-        driver: local
+# volumes:
+#     termix-data:
+#         driver: local
 
-networks:
-    termix-net:
-        driver: bridge
-    default:
-        name: shared_services
+# networks:
+#     termix-net:
+#         driver: bridge
+#     default:
+#         name: shared_services
 
 ### works but cannot communicate to tg, so use cmd line docker instead of compose, see flatnotes  
 # include:
@@ -167,3 +167,5 @@ include:
     - ./pi-hole-data/compose.yml
     - ./karakeep-data/compose.yml
     - ./beszel-data/compose.yml
+    - ./frankmd/compose.yml
+
