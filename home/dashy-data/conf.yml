@@ -17,7 +17,7 @@ sections:
     icon: mdi-rocket-launch
     items:
       - title: Linkding
-        description: Read later articles
+        description: browser bookmarks backup
         icon: sh-linkding
         url: http://10.212.244.230:9090/bookmarks
       - title: llama.cpp
@@ -50,11 +50,6 @@ sections:
         description: google keep notes backup
         icon: sh-anchor-notes
         url: http://10.212.244.230:8600/
-        target: newtab
-      - title: karakeep
-        description: Bookmarks
-        icon: sh-karakeep-light
-        url: http://10.212.244.230:8711/
         target: newtab
       - title: Frankmd
         description: Markdown Notes
@@ -139,5 +134,10 @@ sections:
         description: Books
         icon: sh-grimmory
         url: http://10.212.244.230:6060/
+        target: newtab
+      - title: karakeep
+        description: Bookmarks
+        icon: sh-karakeep-light
+        url: http://10.212.244.230:8711/
         target: newtab
 pages: []
