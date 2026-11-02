@@ -41,8 +41,13 @@ Simple HTTP based file browser and pastebin using [Miniserve](https://github.com
 Git web interface viewer using [cgit](https://github.com/joseluisq/alpine-cgit):  
 ![alpine-cgit](./attachments/alpine_cgit.png)
 
-E-books management using [Grimmory](https://github.com/grimmory-tools/grimmory). I use it together with Android app [readest](https://github.com/readest/readest):  
-![grimmory](./attachments/grimmory.png)
+E-books management using [bookorbit](https://github.com/bookorbit/bookorbit). I use it together with Android app [readest](https://github.com/readest/readest):  
+> Previously used: [Grimmory](https://github.com/grimmory-tools/grimmory)  
+
+![bookorbit](./attachments/bookorbit.png)
+
+Audiobook management using [audiobookshelf](https://github.com/advplyr/audiobookshelf). I use it together with its android apps [audiobookshelf android official app](https://github.com/advplyr/audiobookshelf-app) and [readest](https://github.com/readest/readest):  
+![audiobookshelf](./attachments/audiobookshelf.png)
 
 RPI and docker:  
 ![fastfetch](./attachments/fastfetch_docker_images.png)  
@@ -58,6 +63,11 @@ DNS and Ad blocking using [pi-hole](https://github.com/pi-hole/docker-pi-hole) w
 
 Links bookmarks using [Karakeep](https://github.com/karakeep-app/karakeep/). I use it together with [karakeep android app](https://play.google.com/store/apps/details?id=app.hoarder.hoardermobile&pcampaignid=web_share) and [karakeep chrome extension](https://chromewebstore.google.com/detail/karakeep/kgcjekpmcjjogibpjebkhaanilehneje):  
 ![karakeep](./attachments/karakeep.png)
+
+Trying to move away from karakeep using another "Save for Later Reading" app [readeck](https://codeberg.org/readeck/readeck) which is lighter, unclutter, not many features (yet basic and necessary ones present).  
+I use it together with its unofficial android app [Readeck App](https://github.com/jensomato/ReadeckApp) because the official android app can't authenticate with my self hosted instance.  
+I use it also with [official chrome extention](https://chromewebstore.google.com/detail/readeck/jnmcpmfimecibicbojhopfkcbmkafhee).    
+![readeck](./attachments/readeck.png)  
 
 Docker stats and system stats using [Beszel](https://github.com/henrygd/beszel):  
 ![beszel](./attachments/beszel.png)

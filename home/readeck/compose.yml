@@ -2,6 +2,7 @@ services:
   readeck:
     container_name: readeck
     image: 'codeberg.org/readeck/readeck:latest'
+    restart: unless-stopped
     ports:
       - '8217:8000'
     volumes:
